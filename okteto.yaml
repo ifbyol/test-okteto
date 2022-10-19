@@ -1,7 +1,7 @@
 name: test
 image: ubuntu
 
-context: https://okteto.nacho.dev.okteto.net
+context: non_existent_context
 command: ["echo", "hola"]
 
 resources:
