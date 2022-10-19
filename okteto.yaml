@@ -1,0 +1,16 @@
+name: test
+image: ubuntu
+
+context: https://okteto.nacho.dev.okteto.net
+command: ["echo", "hola"]
+
+resources:
+  limits:
+    memory: "12Gi"
+
+persistentVolume:
+  enabled: true
+  size: 4Gi
+
+sync:
+  - .:/app/
