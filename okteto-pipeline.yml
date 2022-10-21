@@ -1,0 +1,7 @@
+deploy:
+    - okteto pipeline deploy --name="test" --skip-if-exists --repository="git@github.com:okteto/movies.git" --branch=main
+
+    - |
+        cd test &&\
+        echo hola &&\
+        echo $PATATA
