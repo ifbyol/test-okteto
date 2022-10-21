@@ -1,7 +1,6 @@
 name: test
 image: ubuntu
 
-context: non_existent_context
 command: ["echo", "hola"]
 
 resources:
