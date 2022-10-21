@@ -5,4 +5,5 @@ deploy:
     - |
         cd test &&\
         echo hola &&\
+        envsubst < okteto.yaml.tpl > okteto.yaml &&\
         echo $PATATA
