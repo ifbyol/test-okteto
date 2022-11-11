@@ -1,9 +1,2 @@
 deploy:
-    - okteto pipeline deploy --name="test" --skip-if-exists --repository="git@github.com:okteto/movies.git" --branch=main
-
-    - helm repo update
-    - |
-        cd test &&\
-        echo hola &&\
-        envsubst < okteto.yaml.tpl > okteto.yaml &&\
-        echo $PATATA
+    - echo "hola"
