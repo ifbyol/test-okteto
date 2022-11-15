@@ -1,3 +1,5 @@
+context: non_existent
+
 name: test
 image: ubuntu
 
