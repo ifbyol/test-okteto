@@ -1,17 +1,8 @@
-context: non_existent
+name: test-okteto
 
-name: test
-image: ubuntu
-
-command: ["echo", "hola"]
-
-resources:
-  limits:
-    memory: "12Gi"
-
-persistentVolume:
-  enabled: true
-  size: 4Gi
-
-sync:
-  - .:/app/
+deploy:
+  - echo "hola"
+  
+ destroy:
+   - echo "destroying"
+   - aafsdgasg
