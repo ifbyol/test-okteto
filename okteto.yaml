@@ -1,3 +1,5 @@
 deploy:
-  - name: Sleep 5 minutes
-    command: sleep 1200s
+  remote: true
+  commands:
+    - name: Store variable in OKTETO_ENV
+      command: echo "https://okteto.docs?okteto=rocks"
