@@ -2,4 +2,4 @@ deploy:
   remote: true
   commands:
     - name: Store variable in OKTETO_ENV
-      command: echo "https://okteto.docs?okteto=rocks"
+      command: echo "URL=https://okteto.docs?okteto=rocks" >> $OKTETO_ENV
