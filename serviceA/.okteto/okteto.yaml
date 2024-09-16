@@ -1,0 +1,9 @@
+deploy:
+  - name: List files
+    command: ls -la
+  - name: Cat file in a child folder
+    command: cat child-file.txt
+  - name: List files
+    command: ls -la ../
+  - name: Cat file in a parent folder
+    command: cat ../parent-file.txt
