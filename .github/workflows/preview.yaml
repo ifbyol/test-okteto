@@ -18,6 +18,6 @@ jobs:
     - name: Deploy preview environment
       run: |
         okteto ctx use ${OKTETO_URL} --token ${OKTETO_TOKEN}
-        okteto preview deploy ifbyol-pr-1 --repository https://github.com/ifbyol/test-okteto --branch main
+        okteto preview deploy ifbyol-pr-1 --repository https://github.com/ifbyol/test-okteto --branch main --wait
 
         okteto deploy --remote --build --wait -n ifbyol-pr-1
