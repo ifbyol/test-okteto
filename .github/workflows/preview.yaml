@@ -20,4 +20,4 @@ jobs:
         okteto ctx use ${OKTETO_URL} --token ${OKTETO_TOKEN}
         okteto preview deploy ifbyol-pr-1 --repository https://github.com/ifbyol/test-okteto --branch main
 
-        okteto deploy --remote --build --wait -f serviceA/okteto.yaml -n ifbyol-pr-1
+        okteto deploy --remote --build --wait -n ifbyol-pr-1
