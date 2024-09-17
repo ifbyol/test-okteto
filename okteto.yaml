@@ -1,3 +1,7 @@
 deploy:
   - name: Cue
     command: cue version
+
+destroy:
+  - name: Echo
+    command: echo "Destroying the environment"
