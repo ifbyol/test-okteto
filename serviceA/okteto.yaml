@@ -1,0 +1,4 @@
+deploy:
+  commands:
+    - name: Test
+      command: echo "Hello from Okteto!"

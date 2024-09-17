@@ -1,0 +1,23 @@
+on: 
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    container:
+      image: okteto/okteto:2.31.0
+      env:
+        OKTETO_TOKEN: ${{ secrets.OKTETO_TOKEN }}
+        OKTETO_URL: ${{ secrets.OKTETO_URL }}
+    steps:
+    - name: Context
+      uses: actions/checkout@v3
+
+    - name: Deploy preview environment
+      run: |
+        okteto ctx use ${OKTETO_URL} --token ${OKTETO_TOKEN}
+        okteto preview deploy ifbyol-pr-1 --repository https://github.com/ifbyol/test-okteto --branch main
+
+        okteto deploy --remote --build --wait -f serviceA/okteto.yaml
