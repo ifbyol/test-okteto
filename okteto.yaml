@@ -3,5 +3,23 @@ deploy:
     command: cue version
 
 destroy:
-  - name: sleep
-  - command: ./print.sh
+  - name: sleep 1
+    command: ./print.sh
+  - name: sleep 2
+    command: ./print.sh
+  - name: sleep 3
+    command: ./print.sh
+  - name: sleep 4
+    command: ./print.sh
+  - name: sleep 5
+    command: ./print.sh
+  - name: sleep 6
+    command: ./print.sh
+  - name: sleep 7
+    command: ./print.sh
+  - name: sleep 8
+    command: ./print.sh
+  - name: sleep 9
+    command: ./print.sh
+  - name: sleep 10
+    command: ./print.sh

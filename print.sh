@@ -4,7 +4,7 @@
 start_time=$(date +%s)
 
 # Define the total duration in seconds
-duration=300
+duration=30
 
 # Run an infinite loop
 while true; do
@@ -19,7 +19,7 @@ while true; do
   
   # Check if the duration has passed
   if [ "$elapsed_time" -ge "$duration" ]; then
-    echo "300 seconds have passed."
+    echo "30 seconds have passed."
     break
   fi
 done
