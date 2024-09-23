@@ -4,4 +4,4 @@ deploy:
 
 destroy:
   - name: sleep
-  - command: sleep 300
+  - command: ./print.sh
