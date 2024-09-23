@@ -1,3 +1,7 @@
 deploy:
   - name: Cue
     command: cue version
+
+destroy:
+  - name: sleep
+  - command: sleep 300
