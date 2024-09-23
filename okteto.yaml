@@ -3,5 +3,9 @@ deploy:
     command: cue version
 
 destroy:
+  - name: print something
+    command: "hi! this is a test"
+  - name: ls
+    command: ls -la
   - name: sleep
   - command: sleep 300
