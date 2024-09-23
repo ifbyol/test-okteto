@@ -17,4 +17,4 @@ jobs:
       uses: okteto/destroy-preview@ifbyol/add-timeout-flag
       with:
         name: ifbyol-pr-${{ github.event.number }}
-        timeout: 2m
+        timeout: 10m

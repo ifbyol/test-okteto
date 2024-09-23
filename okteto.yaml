@@ -17,9 +17,3 @@ destroy:
     command: ./print.sh
   - name: sleep 7
     command: ./print.sh
-  - name: sleep 8
-    command: ./print.sh
-  - name: sleep 9
-    command: ./print.sh
-  - name: sleep 10
-    command: ./print.sh
