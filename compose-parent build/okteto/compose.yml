@@ -10,6 +10,4 @@ services:
       - MONGODB_HOST=mongodb
     ports:
       - 8080
-    volumes:
-      - api:/src
     command: yarn start

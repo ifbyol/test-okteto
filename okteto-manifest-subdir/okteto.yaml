@@ -1,0 +1,6 @@
+name: service-a
+
+build:
+  service-a:
+    context: .
+    dockerfile: Dockerfile
