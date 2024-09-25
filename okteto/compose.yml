@@ -1,0 +1,15 @@
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: okteto/Dockerfile
+    environment:
+      - MONGODB_USERNAME=okteto
+      - MONGODB_PASSWORD=mongodb123
+      - MONGODB_DATABASE=okteto
+      - MONGODB_HOST=mongodb
+    ports:
+      - 8080
+    volumes:
+      - api:/src
+    command: yarn start
