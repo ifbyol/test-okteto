@@ -1,6 +1,8 @@
 deploy:
   - name: Cue
     command: cue version
+  - name: PWD
+    command: pwd
 
 destroy:
   - name: print something
