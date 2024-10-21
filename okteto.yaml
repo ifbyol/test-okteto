@@ -10,4 +10,4 @@ destroy:
   - name: ls
     command: ls -la
   - name: sleep
-  - command: sleep 300
+  - command: sleep 30
