@@ -1,8 +1,12 @@
 deploy:
-  - name: Cue
-    command: cue version
-  - name: PWD
-    command: pwd
+  remote: true
+  commands:
+    - name: Cue
+      command: cue version
+    - name: PWD
+      command: pwd
+    - name: Clone private repository
+      command: git clone git@github.com:ifbyol/test-up-statefulset.git
 
 destroy:
   - name: print something
