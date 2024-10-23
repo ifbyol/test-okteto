@@ -5,6 +5,8 @@ deploy:
       command: cue version
     - name: PWD
       command: pwd
+    - name: Ssh list identities
+      command: ssh-add -L
     - name: Clone private repository
       command: git clone git@github.com:ifbyol/test-up-statefulset.git
 
