@@ -1,48 +1,57 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: delayed-start-pod
+  name: delayed-start-deployment
 spec:
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-          - matchExpressions:
-              - key: dev.okteto.com/non-existent
-                operator: In
-                values:
-                  - "true"
-  volumes:
-    - name: start-time
-      emptyDir: {}
-  initContainers:
-    - name: write-start-time
-      image: busybox
-      command: ['sh', '-c', 'date +%s > /data/start-time']
-      volumeMounts:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: delayed-start
+  template:
+    metadata:
+      labels:
+        app: delayed-start
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: dev.okteto.com/non-existent
+                    operator: In
+                    values:
+                      - "true"
+      volumes:
         - name: start-time
-          mountPath: /data
-  containers:
-    - name: delayed-container
-      image: python:3.8-alpine
-      volumeMounts:
-        - name: start-time
-          mountPath: /data
-      command: ["python", "-c"]
-      args:
-        - |
-          import time
-          import sys
-          # Read the start time from the file
-          with open('/data/start-time', 'r') as f:
-              start_time = int(f.read().strip())
-          # Get the current time
-          current_time = int(time.time())
-          # Check if 10 minutes have passed
-          if current_time < start_time + 600:
-              print("Not yet time to start")
-              sys.exit(1)
-          else:
-              print("Starting the application")
-              # Replace the following line with your application start command
-              sys.exit(0)
+          emptyDir: {}
+      initContainers:
+        - name: write-start-time
+          image: busybox
+          command: ['sh', '-c', 'date +%s > /data/start-time']
+          volumeMounts:
+            - name: start-time
+              mountPath: /data
+      containers:
+        - name: delayed-container
+          image: python:3.8-alpine
+          volumeMounts:
+            - name: start-time
+              mountPath: /data
+          command: ["python", "-c"]
+          args:
+            - |
+              import time
+              import sys
+              # Read the start time from the file
+              with open('/data/start-time', 'r') as f:
+                  start_time = int(f.read().strip())
+              # Get the current time
+              current_time = int(time.time())
+              # Check if 10 minutes have passed
+              if current_time < start_time + 600:
+                  print("Not yet time to start")
+                  sys.exit(1)
+              else:
+                  print("Starting the application")
+                  # Replace the following line with your application start command
+                  sys.exit(0)
