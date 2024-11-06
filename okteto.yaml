@@ -3,3 +3,5 @@ deploy:
   commands:
     - name: Deploy pod
       command: kubectl apply -f pod.yaml
+    - name: Sleep
+      command: sleep 200s
