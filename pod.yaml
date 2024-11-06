@@ -3,6 +3,15 @@ kind: Pod
 metadata:
   name: delayed-start-pod
 spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: dev.okteto.com/non-existent
+                operator: In
+                values:
+                  - "true"
   volumes:
     - name: start-time
       emptyDir: {}
