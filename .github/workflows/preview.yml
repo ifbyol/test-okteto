@@ -33,3 +33,4 @@ jobs:
         namespace: ifbyol-okteto-admin
         file: okteto.yaml
         log-level: debug
+        tests: unit
