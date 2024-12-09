@@ -6,7 +6,7 @@ on:
 jobs:
   preview:
     runs-on: ubuntu-latest
-    container: okteto/pipeline-runner:1.0.6
+    container: okteto/okteto:latest
     steps:
     - name: Context
       uses: okteto/context@latest
