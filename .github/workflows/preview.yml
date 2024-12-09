@@ -14,20 +14,16 @@ jobs:
         token: ${{ secrets.OKTETO_TOKEN }}
         url: ${{ secrets.OKTETO_URL }}
       env:
-        KUBECONFIG: /github/home/.kube/config
+        #KUBECONFIG: /github/home/.kube/config
+        KUBECONFIG: ${{ github.workspace }}/.kube/config
 
     - name: Set kubeconfig
       # run: cd ${RUNNER_TEMP}/_github_home/.kube && ls -la ${RUNNER_TEMP}/_github_home/.kube
       run: cd /github/home/.kube/ && ls -la /github/home/.kube/
 
-    - name: List temp directory
-      run: ls -la ${RUNNER_TEMP}
-
-    - name: List temp github directory
-      run: ls -l /github/
-
-    - name: List namespaces
+    - name: List service accounts
       run: kubectl get sa
       env:
-        KUBECONFIG: /github/home/.kube/config
-        # KUBECONFIG: ${RUNNER_TEMP}/_github_home/.kube/config
+        KUBECONFIG: ${{ github.workspace }}/.kube/config
+        #KUBECONFIG: /github/home/.kube/config
+        # KUBECONFIG: ${RUNNER_TEMP}/_github_home/.kube/config This doesn't work
