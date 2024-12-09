@@ -22,4 +22,5 @@ jobs:
     - name: List namespaces
       run: kubectl get sa
       env:
-        KUBECONFIG: /github/home/.kube/config
+        # KUBECONFIG: /github/home/.kube/config
+        KUBECONFIG: ${RUNNER_TEMP}/_github_home/.kube/config
