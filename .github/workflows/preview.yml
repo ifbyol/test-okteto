@@ -25,7 +25,7 @@ jobs:
 #        scope: global
     
     - name: Test
-      uses: okteto/test@latest
+      uses: okteto/test@3.1.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
