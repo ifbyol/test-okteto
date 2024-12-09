@@ -1,3 +1,7 @@
+build:
+  my-image:
+    context: .
+
 deploy:
   remote: true
   commands:
@@ -7,13 +11,35 @@ deploy:
       command: pwd
     - name: Ssh list identities
       command: ssh-add -L
+    - name: Ssh list identities 2
+      command: ssh-add -l
     - name: Clone private repository
       command: git clone git@github.com:ifbyol/test-up-statefulset.git
+    - name: Ls -la
+      command: ls -la test-up-statefulset/
+    - name: clone another private repo
+      command: git clone git@github.com:ifbyol/test-failed-compose-name
+    - name: Ls -la
+      command: ls -la test-failed-compose-name/
+#    - name: Delete identities
+#      command: ssh-add -D
+
+test:
+  unit:
+    commands:
+      - name: hi
+        command: ""
 
 destroy:
-  - name: print something
-    command: echo "hi! this is a test"
-  - name: ls
-    command: ls -la
-  - name: sleep
-  - command: sleep 30
+  remote: true
+  commands:
+    - name: print something
+      command: echo "hi! this is a test"
+    - name: Ssh list identities
+      command: ssh-add -L
+    - name: Ssh list identities 2
+      command: ssh-add -l
+    - name: ls
+      command: ls -la
+    - name: sleep
+    - command: sleep 30
