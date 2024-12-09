@@ -21,8 +21,10 @@ jobs:
       run: cd /github/home/.kube/ && ls -la /github/home/.kube/
 
     - name: List temp directory
-      # run: cd ${RUNNER_TEMP}/_github_home/.kube && ls -la ${RUNNER_TEMP}/_github_home/.kube
       run: ls -la ${RUNNER_TEMP}
+
+    - name: List temp github directory
+      run: ls -la /github/
 
     - name: List namespaces
       run: kubectl get sa
