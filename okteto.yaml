@@ -30,7 +30,7 @@ test:
   unit:
     commands:
       - name: hi
-        command: ""
+        command: echo "hi!"
 
 destroy:
   remote: true
