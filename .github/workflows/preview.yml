@@ -7,16 +7,14 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
+    - name: Set kubeconfig
+      run: echo "KUBECONFIG=/github/home/.kube/config" >> $GITHUB_ENV
+
     - name: Context
       uses: okteto/context@latest
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
         url: ${{ secrets.OKTETO_URL }}
 
-    - name: Deploy preview environment
-      uses: okteto/deploy-preview@latest
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        name: ifbyol-pr-${{ github.event.number }}
-        scope: global
+    - name: Set kubeconfig
+      run: cd /github/home/.kube
