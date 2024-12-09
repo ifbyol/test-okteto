@@ -9,7 +9,7 @@ jobs:
     container: okteto/okteto:latest
     steps:
     - name: Context
-      uses: okteto/context@latest
+      uses: okteto/context@3.1.0
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
         url: ${{ secrets.OKTETO_URL }}
