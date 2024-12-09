@@ -7,9 +7,6 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
-    - name: Set kubeconfig
-      run: echo "KUBECONFIG=/github/home/.kube/config" >> $GITHUB_ENV
-
     - name: Context
       uses: okteto/context@latest
       with:
@@ -19,4 +16,4 @@ jobs:
         KUBECONFIG: /github/home/.kube/config
 
     - name: Set kubeconfig
-      run: cd ${RUNNER_TEMP}/_github_home/.kube
+      run: cd ${RUNNER_TEMP}/_github_home/.kube && ls ${RUNNER_TEMP}/_github_home/.kube
