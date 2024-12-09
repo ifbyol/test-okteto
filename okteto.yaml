@@ -1,3 +1,5 @@
+name: hola
+
 build:
   my-image:
     context: .
