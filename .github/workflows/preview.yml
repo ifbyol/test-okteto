@@ -17,10 +17,10 @@ jobs:
         KUBECONFIG: /github/home/.kube/config
 
     - name: Set kubeconfig
-      run: cd ${RUNNER_TEMP}/_github_home/.kube && ls ${RUNNER_TEMP}/_github_home/.kube
+      run: cd ${RUNNER_TEMP}/_github_home/.kube && ls -la ${RUNNER_TEMP}/_github_home/.kube
 
     - name: List namespaces
       run: kubectl get sa
       env:
-        # KUBECONFIG: /github/home/.kube/config
-        KUBECONFIG: ${RUNNER_TEMP}/_github_home/.kube/config
+        KUBECONFIG: /github/home/.kube/config
+        # KUBECONFIG: ${RUNNER_TEMP}/_github_home/.kube/config
