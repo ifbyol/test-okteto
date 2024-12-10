@@ -5,10 +5,10 @@ build:
     context: .
 
 deploy:
-  remote: true
+  #remote: true
   commands:
-    - name: Cue
-      command: cue version
+    #- name: Cue
+    #  command: cue version
     - name: PWD
       command: pwd
     - name: Ssh list identities
@@ -30,7 +30,19 @@ test:
   unit:
     commands:
       - name: hi
-        command: echo "hi!"
+        command: echo "hi unit!"
+  integration:
+    commands:
+      - name: hi
+        command: echo "hi integration!"
+    depends_on:
+      - unit
+  e2e:
+    commands:
+      - name: hi
+        command: echo "hi e2e!"
+    depends_on:
+      - integration
 
 destroy:
   remote: true
