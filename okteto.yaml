@@ -9,8 +9,8 @@ deploy:
 #      command: ssh-add -L
 #    - name: Clone private repository
 #      command: git clone git@github.com:ifbyol/test-up-statefulset.git
-#    - name: Sleep 2 minutes
-#      command: sleep 120
+    - name: Sleep 2 minutes
+      command: echo "sleep 2 minutes" && sleep 120
 
 destroy:
   - name: print something
