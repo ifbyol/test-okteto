@@ -13,8 +13,8 @@ deploy:
       command: echo "sleep 1 minutes" && sleep 160
 #    - name: fail on purpose
 #      command: exit 1
-     - name: echo OK!
-       command: echo "OK!"
+    - name: echo OK!
+      command: echo "OK!"
 
 #destroy:
 #  - name: print something
