@@ -1,7 +1,7 @@
 on: 
   push:
     branches:
-      - main
+      - ifbyol/test
 
 jobs:
   preview:
