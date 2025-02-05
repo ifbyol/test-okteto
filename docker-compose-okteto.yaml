@@ -1,0 +1,8 @@
+services:
+  mysql:
+    # image: 'mysql:8.0.28-oracle'
+    image: ${OKTETO_BUILD_APP_IMAGE}
+    environment:
+      MYSQL_ROOT_PASSWORD: okteto
+    ports:
+    - '3306:3306'
