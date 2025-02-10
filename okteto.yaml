@@ -1,12 +1,12 @@
-build:
-  service-a:
-    context: .
+#build:
+#  service-a:
+#    context: .
 
 deploy:
-  remote: true
+  image: aquasec/trivy:0.59.1
   commands:
-    - name: Cue
-      command: cue version
+    - name: Scan CLI image
+      command: trivy registry.product.okteto.dev/ifbyol/cli:client-go
 #    - name: PWD
 #      command: pwd
 #    - name: Ssh list identities
