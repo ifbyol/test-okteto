@@ -1,8 +1,6 @@
 deploy:
   remote: true
   commands:
-    - name: Cue
-      command: cue version
     - name: PWD
       command: pwd
 destroy:
