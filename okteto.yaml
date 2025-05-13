@@ -1,14 +1,18 @@
-build:
-  service-a:
-    context: .
+#build:
+#  service-a:
+#    context: .
+
+dependencies:
+  - https://github.com/okteto/go-getting-started
+  - https://github.com/okteto/movies
 
 deploy:
   remote: true
   commands:
-    - name: Cue
-      command: cue version
-#    - name: PWD
-#      command: pwd
+#    - name: Cue
+#      command: cue version
+    - name: PWD
+      command: pwd
 #    - name: Ssh list identities
 #      command: ssh-add -L
 #    - name: Clone private repository
