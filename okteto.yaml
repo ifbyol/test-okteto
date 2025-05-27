@@ -1,12 +1,11 @@
-build:
-  service-a:
-    context: .
+#build:
+#  service-a:
+#    context: .
 
 deploy:
-  remote: true
   commands:
-    - name: Cue
-      command: cue version
+    - name: Hi
+      command: echo "hi!"
 #    - name: PWD
 #      command: pwd
 #    - name: Ssh list identities
@@ -16,10 +15,10 @@ deploy:
 #    - name: Sleep 2 minutes
 #      command: sleep 120
 
-#destroy:
-#  - name: print something
-#    command: echo "hi! this is a test"
+destroy:
+  - name: print something
+    command: echo "hi! this is a test"
 #  - name: ls
 #    command: ls -la
-#  - name: sleep
-#  - command: sleep 30
+  - name: Long sleep
+    command: sleep 360
