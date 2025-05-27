@@ -21,4 +21,4 @@ destroy:
 #  - name: ls
 #    command: ls -la
   - name: Long sleep
-    command: sleep 360
+    command: sleep 600
