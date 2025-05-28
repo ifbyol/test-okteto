@@ -20,4 +20,3 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         name: ifbyol-pr-${{ github.event.number }}
-        # KUBECONFIG: ${RUNNER_TEMP}/_github_home/.kube/config This doesn't work
