@@ -18,7 +18,7 @@ jobs:
       with:
         namespace: ifbyol-pr-${{ github.event.number }}
         name: test-okteto
-        timeout: 8m
+        timeout: 11m
 
 
     - name: Destroy preview environment
