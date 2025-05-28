@@ -1,0 +1,27 @@
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  closed:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Context
+      uses: okteto/context@latest
+      with:
+        token: ${{ secrets.OKTETO_TOKEN }}
+        url: ${{ secrets.OKTETO_URL }}
+
+    - name: Destroy pipeline
+      uses: okteto/destroy-pipeline@ifbyol/add-timeout-parameter
+      with:
+        namespace: ifbyol-pr-${{ github.event.number }}
+        name: test-okteto
+        timeout: 8m
+
+
+    - name: Destroy preview environment
+      uses: okteto/destroy-preview@latest
+      with:
+        name: pr-${{ github.event.number }}-cindylopez

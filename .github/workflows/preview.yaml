@@ -1,0 +1,23 @@
+on: 
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    container: okteto/okteto:latest
+    steps:
+    - name: Context
+      uses: okteto/context@latest
+      with:
+        token: ${{ secrets.OKTETO_TOKEN }}
+        url: ${{ secrets.OKTETO_URL }}
+
+    - name: Deploy preview environment
+      uses: okteto/deploy-preview@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: ifbyol-pr-${{ github.event.number }}
+        # KUBECONFIG: ${RUNNER_TEMP}/_github_home/.kube/config This doesn't work
