@@ -1,0 +1,7 @@
+name: test-okteto
+
+deploy:
+  - echo "hola"
+destroy:
+  - echo "destroying"
+  - aafsdgasg
