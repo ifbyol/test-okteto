@@ -2,6 +2,7 @@ name: test-okteto
 
 deploy:
   - echo "hola"
+  - helm upgrade --install postgresql oci://registry-1.docker.io/bitnamicharts/postgresql -f values.yml --version 13.4.4
 destroy:
   - echo "destroying"
   - aafsdgasg
