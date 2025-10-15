@@ -1,6 +1,6 @@
-build:
-  service-a:
-    context: .
+#build:
+#  service-a:
+#    context: .
 
 deploy:
   remote: true
