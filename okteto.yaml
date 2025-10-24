@@ -9,6 +9,8 @@ deploy:
 #      command: cue version
     - name: PWD
       command: pwd
+    - name: sleep 9 minutes
+      command: sleep 540
 #    - name: Ssh list identities
 #      command: ssh-add -L
 #    - name: Clone private repository
