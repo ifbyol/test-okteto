@@ -10,7 +10,7 @@ deploy:
     - name: PWD
       command: pwd
     - name: Say hi!
-      command: "hi!"
+      command: echo hi!
 #    - name: Ssh list identities
 #      command: ssh-add -L
 #    - name: Clone private repository
