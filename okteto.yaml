@@ -5,5 +5,5 @@ deploy:
       command: ssh-add -L
     - name: Sleep 6 minute
       command: sleep 360
-    - name: List identities
+    - name: List identities 2
       command: ssh-add -L
