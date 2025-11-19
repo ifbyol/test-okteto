@@ -1,27 +1,9 @@
-#build:
-#  service-a:
-#    context: .
-
 deploy:
-#  remote: true
+  #remote: true
   commands:
-#    - name: Cue
-#      command: cue version
-    - name: PWD
-      command: pwd
-    - name: Say hi!
-      command: echo hi!
-#    - name: Ssh list identities
-#      command: ssh-add -L
-#    - name: Clone private repository
-#      command: git clone git@github.com:ifbyol/test-up-statefulset.git
-#    - name: Sleep 2 minutes
-#      command: sleep 120
-
-#destroy:
-#  - name: print something
-#    command: echo "hi! this is a test"
-#  - name: ls
-#    command: ls -la
-#  - name: sleep
-#  - command: sleep 30
+    - name: List identities
+      command: ssh-add -L
+    - name: Sleep 6 minute
+      command: sleep 360
+    - name: List identities
+      command: ssh-add -L
