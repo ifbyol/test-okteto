@@ -1,11 +1,9 @@
 deploy:
   #remote: true
   commands:
-    - name: start agent
-      command: eval "$(ssh-agent -s)"
     - name: List identities
-      command: ssh-add -L
+      command: eval "$(ssh-agent -s)" && ssh-add -L
     - name: Sleep 6 minute
       command: sleep 360
     - name: List identities
-      command: ssh-add -L
+      command: eval "$(ssh-agent -s)" && ssh-add -L
