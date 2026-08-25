@@ -11,6 +11,8 @@ deploy:
       command: pwd
     - name: Say hi!
       command: echo hi!
+    - name: Helm version
+      command: helm version
 #    - name: Ssh list identities
 #      command: ssh-add -L
 #    - name: Clone private repository
