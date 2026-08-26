@@ -12,6 +12,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: INJECT - populate the orphaned gitlink dir (GHA side only)
+        run: |
+          for i in $(seq 1 40); do printf 'localized text payload %02d\n' "$i" > okteto-destroy-fail/loc_$i.txt; done
+          du -sb okteto-destroy-fail
+          echo "status:    [$(git status --short | tr '\n' '|')]"
+          echo "untracked: [$(git ls-files --others --exclude-standard | tr '\n' ' ')]"
+
       - name: Smart build forensics (inside the action image)
         run: |
           docker run --rm -v "$PWD:/github/workspace" -w /github/workspace \
