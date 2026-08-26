@@ -3,6 +3,8 @@ FROM ubuntu AS base
 ARG TEST_VALUE=k7f3q9zx2m
 RUN echo "base TEST_VALUE=${TEST_VALUE}"
 
+RUN echo "fooo"
+
 FROM base AS development
 RUN --mount=type=secret,id=mysecret \
     echo "development stage; secret bytes=$(wc -c < /run/secrets/mysecret)"
