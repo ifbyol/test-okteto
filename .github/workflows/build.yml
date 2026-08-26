@@ -24,7 +24,5 @@ jobs:
           url: ${{ secrets.OKTETO_URL }}
           token: ${{ secrets.OKTETO_TOKEN }}
 
-      - name: Build service-a
+      - name: Build all services
         uses: okteto/build@latest
-        with:
-          path: service-a
