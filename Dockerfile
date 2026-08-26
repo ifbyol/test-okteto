@@ -1,1 +1,4 @@
 FROM ubuntu
+
+ARG TEST_VALUE=k7f3q9zx2m
+RUN echo "TEST_VALUE=${TEST_VALUE}"

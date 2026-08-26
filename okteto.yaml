@@ -1,6 +1,8 @@
-#build:
-#  service-a:
-#    context: .
+build:
+  service-a:
+    context: .
+    args:
+      TEST_VALUE: ${TEST_VALUE}
 
 deploy:
 #  remote: true
