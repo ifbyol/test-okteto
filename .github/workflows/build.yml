@@ -22,4 +22,4 @@ jobs:
         uses: okteto/build@latest
         with:
           path: service-a
-          buildargs: TEST_VALUE=z3v7k1m4pq
+          buildargs: TEST_VALUE=r6b2y9jc4n
