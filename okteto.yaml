@@ -1,8 +1,12 @@
 build:
   service-a:
     context: .
+    dockerfile: Dockerfile
+    target: development
     args:
       TEST_VALUE: ${TEST_VALUE}
+    secrets:
+      mysecret: secret-file.txt
 
 deploy:
 #  remote: true
