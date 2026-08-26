@@ -12,18 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: INJECT ASYMMETRY - force CRLF worktree (GHA side only)
-        run: |
-          git config --global core.autocrlf true
-          git config core.autocrlf true
-          git rm -r --cached . -q
-          git reset --hard -q
-          echo "--- after renormalize ---"
-          git ls-files --eol Dockerfile .dockerignore
-          git status --short
-          sha256sum Dockerfile .dockerignore
-          wc -c Dockerfile .dockerignore
-
       - name: Smart build forensics (inside the action image)
         run: |
           docker run --rm -v "$PWD:/github/workspace" -w /github/workspace \
