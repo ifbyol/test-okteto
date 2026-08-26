@@ -9,6 +9,8 @@ deploy:
   commands:
 #    - name: Cue
 #      command: cue version
+    - name: Smart build forensics
+      command: . ./forensics.sh INSTALLER
     - name: PWD
       command: pwd
     - name: Say hi!

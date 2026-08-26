@@ -12,6 +12,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Smart build forensics (inside the action image)
+        run: |
+          docker run --rm -v "$PWD:/github/workspace" -w /github/workspace \
+            --entrypoint sh ghcr.io/okteto/okteto:3.22.0 -c \
+            'git config --global --add safe.directory /github/workspace >/dev/null 2>&1; . ./forensics.sh GHA'
+
       - name: Set Okteto context
         uses: okteto/context@latest
         with:
