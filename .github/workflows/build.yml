@@ -21,4 +21,5 @@ jobs:
       - name: Build service-a
         uses: okteto/build@latest
         with:
-          service: service-a
+          path: service-a
+          buildargs: TEST_VALUE=z3v7k1m4pq
