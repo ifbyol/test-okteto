@@ -1,0 +1,3 @@
+[submodule "okteto-destroy-fail"]
+	path = okteto-destroy-fail
+	url = https://github.com/ifbyol/okteto-destroy-fail
