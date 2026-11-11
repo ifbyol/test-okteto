@@ -10,7 +10,7 @@
 
 deploy:
 #  remote: true
-  compose: docker-compose.yml
+#  compose: docker-compose.yml
   commands:
 #    - name: Cue
 #      command: cue version
