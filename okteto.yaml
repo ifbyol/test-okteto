@@ -1,4 +1,4 @@
-build:
+#build:
 #  service-a:
 #    context: .
 #    dockerfile: Dockerfile
