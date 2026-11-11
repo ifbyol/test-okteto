@@ -1,12 +1,12 @@
 build:
-  service-a:
-    context: .
-    dockerfile: Dockerfile
-    target: development
-    args:
-      TEST_VALUE: ${TEST_VALUE}
-    secrets:
-      mysecret: secret-file.txt
+#  service-a:
+#    context: .
+#    dockerfile: Dockerfile
+#    target: development
+#    args:
+#      TEST_VALUE: ${TEST_VALUE}
+#    secrets:
+#      mysecret: secret-file.txt
 
 deploy:
 #  remote: true
@@ -14,19 +14,19 @@ deploy:
   commands:
 #    - name: Cue
 #      command: cue version
-    - name: Smart build forensics
-      command: . ./forensics.sh INSTALLER
+#    - name: Smart build forensics
+#      command: . ./forensics.sh INSTALLER
     - name: PWD
       command: pwd
     - name: Say hi!
       command: echo hi!
     - name: Helm version
       command: helm version
-    - name: Print service-a build tag
-      command: |
-        echo "IMAGE=$OKTETO_BUILD_SERVICE_A_IMAGE"
-        echo "TAG=$OKTETO_BUILD_SERVICE_A_TAG"
-        echo "SHA=$OKTETO_BUILD_SERVICE_A_SHA"
+#    - name: Print service-a build tag
+#      command: |
+#        echo "IMAGE=$OKTETO_BUILD_SERVICE_A_IMAGE"
+#        echo "TAG=$OKTETO_BUILD_SERVICE_A_TAG"
+#        echo "SHA=$OKTETO_BUILD_SERVICE_A_SHA"
 #    - name: Ssh list identities
 #      command: ssh-add -L
 #    - name: Clone private repository
